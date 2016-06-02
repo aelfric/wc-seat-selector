@@ -13,6 +13,8 @@ module.exports = function (store, action) {
     store.numSelected -= 1;
     break;
   case actions.SUBMIT:
+	document.getElementById('seatsChosen').value = action.payload.selectedSeats.sort();
+	action.payload.modal.close();
     console.info(action);
     break;
   case actions.INIT:
